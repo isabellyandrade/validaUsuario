@@ -15,9 +15,10 @@ public class ContaProxy implements Conta {
     @Override
     public void exibirTipoConta() {
         if (usuario != null && usuario.isAutenticado()) {
+            System.out.println("[Proxy] Acesso permitido.");
             contaReal.exibirTipoConta();
         } else {
-            System.out.println("Acesso negado. Usuário não autenticado.");
+            System.out.println("[Proxy] Acesso negado. Usuario nao autenticado.");
         }
     }
 }

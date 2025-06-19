@@ -51,15 +51,15 @@ public class Main {
         boolean autenticado = false;
         for (Usuario user : usuarios) {
             if (user.autenticar(loginNome, loginSenha)) {
-                System.out.println("Login bem-sucedido!");
                 user.exibirConta();
                 autenticado = true;
                 break;
             }
-        }
-
-        if (!autenticado) {
-            System.out.println("Falha no login.");
+            else {
+                user.exibirConta();
+                autenticado = false;
+                break;
+            }
         }
 
         scanner.close();
